@@ -10,7 +10,7 @@ public class TodoTaskDto {
 	private long id;
 
 	@NotEmpty
-	@Size(min = 2)
+	@Size(max = 35)
 	private String workName;
 
 	@NotEmpty
