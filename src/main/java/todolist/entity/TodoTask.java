@@ -51,7 +51,7 @@ public class TodoTask {
 	}
 
 	public void setEndDate(String endDate) {
-		this.endDate = startDate;
+		this.endDate = endDate;
 	}
 
 	@Column(name = "STATUS", nullable = false)

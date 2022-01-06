@@ -3,6 +3,8 @@ package todolist.todotask;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class TodoTaskDto {
 
 	private long id;
@@ -12,17 +14,17 @@ public class TodoTaskDto {
 	private String workName;
 
 	@NotEmpty
-	@Size(min = 8,max = 8)
+	@DateTimeFormat(pattern = "yyyyMMdd")
 	private String startDate;
 
 	@NotEmpty
-	@Size(min = 8,max = 8)
+	@DateTimeFormat(pattern = "yyyyMMdd")
 	private String endDate;
 
 	@NotEmpty
-	@Size(min = 1,max = 1)
-	private int status;
-	
+	@Size(max = 8)
+	private String status;
+
 	public long getId() {
 		return id;
 	}
@@ -55,11 +57,11 @@ public class TodoTaskDto {
 		this.endDate = startDate;
 	}
 
-	public int getStatus() {
+	public String getStatus() {
 		return status;
 	}
 
-	public void setStatus(int status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 }
