@@ -9,17 +9,28 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "todotask", uniqueConstraints = {@UniqueConstraint(columnNames = {"WORKNAME"})})
+@Table(name = "todotask", uniqueConstraints = { @UniqueConstraint(columnNames = { "WORKNAME" }) })
 public class TodoTask {
-	private Long id;
+	private long id;
 	private String workName;
 	private String startDate;
 	private String endDate;
-	private Integer status;
+	private int status;
+
+	public TodoTask(long id, String workName, String startDate, String endDate, int status) {
+		this.id = id;
+		this.workName = workName;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.status = status;
+	}
+
+	public TodoTask() {
+	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
 
@@ -55,11 +66,11 @@ public class TodoTask {
 	}
 
 	@Column(name = "STATUS", nullable = false)
-	public Integer getStatus() {
+	public int getStatus() {
 		return status;
 	}
 
-	public void setStatus(Integer status) {
+	public void setStatus(int status) {
 		this.status = status;
 	}
 }

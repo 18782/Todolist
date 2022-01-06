@@ -25,6 +25,18 @@ public class TodoTaskDto {
 	@Size(max = 8)
 	private String status;
 
+	// constructor
+	public TodoTaskDto(long id, String workName, String startDate, String endDate, String status) {
+		this.id = id;
+		this.workName = workName;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.status = status;
+	}
+
+	public TodoTaskDto() {
+	}
+
 	public long getId() {
 		return id;
 	}

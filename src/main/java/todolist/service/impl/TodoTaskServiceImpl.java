@@ -3,6 +3,7 @@ package todolist.service.impl;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -22,7 +23,7 @@ import todolist.utils.AppConstants;
 
 @Service
 public class TodoTaskServiceImpl implements TodoTaskService {
-
+	@Autowired
 	private TodoTaskRepository todoTaskRepository;
 
 	public TodoTaskServiceImpl(TodoTaskRepository todoTaskRepository) {
